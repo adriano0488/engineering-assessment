@@ -1,36 +1,74 @@
-# Engineering Challenge
+# FoodTruck Finder
 
-We strive to be a practical and pragmatic team. That extends to the way that we work with you to understand if this team is a great fit for you. We want you to come away with a great understanding of the kind of things that we actually do day to day and what it is like to work in our teams.
+FoodTruck Finder is a web application designed to help users find food trucks in San Francisco. The application fetches data from the San Francisco government's open data API, displays it in a user-friendly table, and allows users to view food truck locations on a map.
 
-We don't believe that whiteboard coding with someone watching over your shoulder accurately reflects our day to day. Instead we'd like to be able to discuss code that you have already written when we meet.
+## Technologies Used
 
-This can be a project of your own or a substantial pull request on an open source project, but we recognize that most people have done private or proprietary work and this engineering challenge is for you.
+- **Node.js**: Used for building the backend API due to its efficiency and ability to handle I/O operations.
+- **Express**: A minimal framework for Node.js, ideal for quickly building APIs.
+- **React**: Used for building the user interface due to its flexibility and robustness in creating reusable components.
+- **Material-UI**: A React component library that implements Material Design, providing a modern and consistent UI.
+- **Tailwind CSS**: Used for custom styling, providing utility classes for quick responsive layout construction.
+- **Leaflet**: A JavaScript library for interactive maps, lightweight and easy to use.
+- **Docker**: Used for containerizing the application, ensuring it runs in any environment.
 
-We realize that taking on this assignment represents a time commitment for you, and we do not take that lightly. Throughout the recruitment process we will be respectful of your time and commit to working quickly and efficiently. This will be the only technical assessment you'll be asked to do. The brief following conversations will be based on this assessment and your prior experiences.
+## Installation
 
-## Challenge Guidelines
+Follow the steps below to set up and run the application locally:
 
-* This is meant to be an assignment that you spend approximately two to three hours of focused coding. Do not feel that you need to spend extra time to make a good impression. Smaller amounts of high quality code will let us have a much better conversation than large amounts of low quality code.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/adriano0488/engineering-assessment.git
+    cd engineering-assessment
+    ```
 
-* Think of this like an open source project. Create a repo on Github, use git for source control, and use a Readme file to document what you built for the newcomer to your project.
+2. Set up the Docker environment:
+    ```sh
+    docker-compose up --build
+    ```
 
-* We build systems engineered to run in production. Given this, please organize, design, test, deploy, and document your solution as if you were going to put it into production. We completely understand this might mean you can't do much in the time budget. Prioritize production-readiness over features.
+3. Access the application:
+    Open your browser and go to `http://localhost:5000`.
 
-* Think out loud in your documentation. Write our tradeoffs, the thoughts behind your choices, or things you would do or do differently if you were able to spend more time on the project or do it a second time.
+## Troubleshooting
 
-* We have a variety of languages and frameworks that we use, but we don't expect you to know them ahead of time. For this assignment you can make whatever choices that let you express the best solution to the problem given your knowledge and favorite tools without any restriction. Please make sure to document how to get started with your solution in terms of setup so that we'd be able to run it.
+If you encounter any issues during installation, consider the following:
 
-* Once this is functioning and documented to your liking, either send us a link to your public repo or compress the project directory, give the file a pithy name which includes your own name, and send the file to us.
+- **Docker not starting**: Ensure Docker Desktop is installed and running. Check Docker resources (memory, CPU) settings if the containers are not starting.
+- **Port conflicts**: Ensure ports 5000 and 6379 are not in use by other applications. Modify the `docker-compose.yml` file to use different ports if needed.
+- **Network issues**: If containers can't communicate, try restarting Docker or your computer. Check network settings in Docker Desktop.
+- **Module not found errors**: Run `docker-compose down` and `docker-compose up --build` to rebuild the containers and ensure all dependencies are installed.
 
-## The Challenge
+## Reasons for Technology Choices
 
-As the song says, "you've got to play the hand you're dealt", and in this case your hand is to implement something to help us manage our food truck habit.
+- **Node.js and Express**: Chosen for the ability to quickly build scalable and efficient APIs.
+- **React**: Chosen for its flexibility, robustness, and wide adoption in the community.
+- **Material-UI and Tailwind CSS**: Chosen to provide a modern and highly customizable user interface.
+- **Leaflet**: Chosen for being a lightweight and easy-to-integrate mapping library.
+- **Docker**: Chosen to ensure consistent application behavior across different environments.
 
-Our team loves to eat. They are also a team that loves variety, so they also like to discover new places to eat.
+## TODOs
 
-In fact, we have a particular affection for food trucks. One of the great things about Food Trucks in San Francisco is that the city releases a list of them as open data.
+- **PostgreSQL Integration**: Store food truck data in a relational database for more efficient queries and data persistence.
+- **Asynchronous Data Updates via Cron**: Implement a cron job to periodically update the food truck data.
+- **Optimized Queries**: Implement caching for frequent queries to improve overall application performance.
+- **Authentication and Authorization**: Add user authentication and authorization functionalities.
+- **Automated Testing**: Implement unit and integration tests to ensure code quality.
 
-Your assignment is to make it possible for our teams to do something interesting with this food trucks data.
+## Contribution
 
-This is a freeform assignment. You can write a web API that returns a set of food trucks. You can write a web frontend that visualizes the nearby food trucks for a given place. You can create a CLI that lets us get the names of all the taco trucks in the city. You can create system that spits out a container with a placeholder webpage featuring the name of each food truck to help their marketing efforts. You're not limited by these ideas at all, but hopefully those are enough help spark your own creativity.
-San Francisco's food truck open dataset is [located here](https://data.sfgov.org/Economy-and-Community/Mobile-Food-Facility-Permit/rqzj-sfat/data) and there is an endpoint with a [CSV dump of the latest data here](https://data.sfgov.org/api/views/rqzj-sfat/rows.csv). We've also included a copy of the data in this repo as well.
+Contributions are welcome! Feel free to open issues and pull requests in the repository.
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+You can access the project repository [here](https://github.com/adriano0488/engineering-assessment).
+
+## Screenshots
+
+![Screenshot 1](https://github.com/adriano0488/engineering-assessment/blob/main/screenshoot1.jpeg)
+![Screenshot 2](https://github.com/adriano0488/engineering-assessment/blob/main/screenshoot2.jpeg)
+![Screenshot 3](https://github.com/adriano0488/engineering-assessment/blob/main/screenshoot3.jpeg)
