@@ -6,7 +6,7 @@ const cache = require('../utils/cache');
 
 const FOODTRUCKS_URL = 'https://data.sfgov.org/api/views/rqzj-sfat/rows.csv?accessType=DOWNLOAD';
 
-// Função para obter coordenadas a partir do endereço usando Nominatim
+// Function to obtain coordinates from the address using Nominatim
 const getCoordinates = async (address) => {
   try {
     const response = await axios.get('https://nominatim.openstreetmap.org/search', {
@@ -28,6 +28,9 @@ const getCoordinates = async (address) => {
   }
 };
 
+/**
+ * route to retrieve foodtruck data from API and using middleware with REDIS to cache the response based on URL.
+*/
 router.get('/', cache(3600), async (req, res) => {
   try {
     const response = await axios.get(FOODTRUCKS_URL);
