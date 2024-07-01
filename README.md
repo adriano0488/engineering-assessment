@@ -46,6 +46,8 @@ If you encounter any issues during installation, consider the following:
 - **Material-UI and Tailwind CSS**: Chosen to provide a modern and highly customizable user interface.
 - **Leaflet**: Chosen for being a lightweight and easy-to-integrate mapping library.
 - **Docker**: Chosen to ensure consistent application behavior across different environments.
+- **Redis**: Chosen to improve performance with caching for frequent data retrieval.
+- **Vite**: Chosen for its fast and efficient build process, enhancing the development experience.
 
 ## TODOs
 
